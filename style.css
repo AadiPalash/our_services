@@ -1,0 +1,272 @@
+/* ------------------- */
+/* TEMPLATE        -- */
+/* ----------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
+
+/* Services Tab CSS PART */
+.service_tab {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+.service_tab .container {
+    flex-basis: 75%;
+}
+
+
+/* MAKE IT CUTE ----- */
+.service_tab .container .tabs {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.service_tab .container .tabs .tabby-tab {
+    flex: 1;
+}
+
+.service_tab .container .tabs .tabby-tab label {
+    display: block;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+
+    color: #444e5a;
+    font-weight: 400;
+    font-family: "goldenbook";
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.65;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.service_tab .container .tabs .tabby-tab label:hover {
+    /* background: #41e600e0; */
+    background: #c7b9da27;
+}
+.container .tabs .tabby-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 70px;
+    border-radius: 0 0 8px 8px;
+    background: #c7b9da27;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    /* show/hide */
+    opacity: 0;
+   /* transform: scale(0.1);
+     transform-origin: left top;  */
+
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.tabby-content .content_box {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 5px solid rgb(255, 255, 255);
+    padding: 0 50px;
+
+}
+.tabby-content .content_box h1 {
+    color: #5f6979;
+    font-weight: 400;
+    font-family: "goldenbook";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 0;
+    text-align: center;
+}
+
+.tabby-content .content_box p {
+    font-size: 18px;
+    color: #444e5a;
+    font-family: "lato";
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+}
+.tabby-content .content_box .btn {
+    padding-top: 40px;
+    text-align: center;
+
+}
+.tabby-content .content_box .btn a {
+    text-decoration: none;
+    width: 50%;
+    margin: auto;
+    background-color: #ffffff;
+    display: block;
+    padding: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-family: "lato";
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 1.65;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #444e5a;
+}
+.tabby-content .content_box .btn a:hover {
+    color: #fff;
+    background-color: #444e5a;
+    transition: all 0.4s;
+}
+
+
+.tabby-content .image_box {
+    flex-basis: 30%;
+}
+.tabby-content .image_box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* MAKE IT WORK ----- */
+
+.tabby-tab [type="radio"] {
+    display: none;
+}
+[type="radio"]:checked ~ label {
+    /* background: #41e600e0; */
+    background: #c7b9da27;
+    z-index: 2;
+}
+
+[type="radio"]:checked ~ label ~ .tabby-content {
+    z-index: 1;
+
+    /* show/hide */
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* max-width:1440px */
+@media (max-width:1440px) {
+  .service_tab .container .tabs .tabby-tab label {
+    height: 65px;
+}
+}
+/* max-width:1440px */
+
+/* Max-width:1024px */
+@media (max-width:1024px) {
+  .service_tab .container {
+    flex-basis: 90%;
+}
+.service_tab .container .tabs .tabby-tab label {
+  height: 65px;
+}
+.tabby-content .content_box {
+  flex-basis: 60%;
+}
+.tabby-content .image_box {
+  flex-basis: 40%;
+}
+}
+/* Max-width:1024px */
+
+
+
+/* Responsive 768px*/
+@media(max-width:768px) {
+    .service_tab .container {
+        flex-basis: 95%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .service_tab .container .tabs {
+        min-height: 500px;
+    }
+    .service_tab .container .tabs .tabby-tab label {
+        font-size: 14px;
+        letter-spacing: 0;
+        padding: 0;
+    }
+    .service_tab .container .tabs .tabby-tab {
+        /* flex: 1; */
+        flex-basis: 25%;
+    }
+    .tabby-content .image_box {
+        flex-basis: 40%;
+    }
+    .tabby-content .content_box {
+        flex-basis: 60%;
+        padding: 0 20px;
+
+    }
+    .tabby-content .content_box .btn {
+        padding-top: 10px;
+    }
+    .tabby-content .content_box .btn a {
+        width: 70%;
+    }
+}
+/* Responsive 768px */
+
+
+/* max-width:550px */
+@media(max-width:500px) {
+  .service_tab {
+    padding: 10px 0;
+
+}
+    .service_tab .container .tabs {
+        min-height: 900px;
+        display: block;
+    }
+
+
+    .service_tab .container .tabs .tabby-tab label {
+        height: 40px;
+        font-size: 16px;
+        line-height: normal;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+
+    .container .tabs .tabby-content {
+        top: 180px;
+        align-items: stretch;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+    .tabby-content .image_box {
+        max-height: 250px;
+    }
+    .tabby-content .content_box {
+        justify-content: flex-start;
+        border-right: 0;
+
+    }
+    .tabby-content .content_box h1 {
+        font-size: 16px;
+        padding-top: 15px;
+    }
+    .tabby-content .content_box p {
+        font-size: 16px;
+    }
+
+
+
+
+}
+/* max-width:550px */
+
+
+/*  */
